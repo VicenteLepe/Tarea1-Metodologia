@@ -19,6 +19,7 @@ public class Player {
   private final int evd;
   private int normaLevel;
   private int stars;
+  private int wins;
   private int currentHp;
 
   /**
@@ -58,6 +59,18 @@ public class Player {
    */
   public int getStars() {
     return stars;
+  }
+
+  /**
+   * Increases this player's wins count by an amount.
+   */
+  public void increaseWinsBy(final int amount) { wins += amount; }
+
+  /**
+   * Returns this player's wins count.
+   */
+  public int getWins() {
+    return wins;
   }
 
   /**
@@ -166,6 +179,7 @@ public class Player {
            && getEvd() == player.getEvd()
            && getNormaLevel() == player.getNormaLevel()
            && getStars() == player.getStars()
+           && getWins() == player.getWins()
            && getCurrentHp() == player.getCurrentHp()
            && getName().equals(player.getName());
   }

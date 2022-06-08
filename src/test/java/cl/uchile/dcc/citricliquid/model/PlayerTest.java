@@ -56,6 +56,24 @@ public class PlayerTest {
   }
 
   @Test
+  public void starsTest() {
+    Assertions.assertEquals(0, suguri.getStars());
+    suguri.increaseStarsBy(5);
+    Assertions.assertEquals(5, suguri.getStars());
+    suguri.increaseStarsBy(3);
+    Assertions.assertEquals(8, suguri.getStars());
+    suguri.reduceStarsBy(4);
+    Assertions.assertEquals(4, suguri.getStars());
+  }
+
+  @Test
+  public void winsTest() {
+    Assertions.assertEquals(0, suguri.getWins());
+    suguri.increaseWinsBy(2);
+    Assertions.assertEquals(2, suguri.getWins());
+  }
+
+  @Test
   public void copyTest() {
     final var expectedSuguri = new Player(PLAYER_NAME, 4, 1, -1, 2);
     final var actualSuguri = suguri.copy();
